@@ -24,7 +24,7 @@ jobs:
       - name: Install Playwright and Axe-Playwright
         run: |
           npx playwright install
-          npm install --save-dev axe-playwright
+          npm install --save-dev @playwright/test axe-playwright
 
       - name: Run Accessibility Tests
         run: |
