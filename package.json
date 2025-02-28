@@ -1,13 +1,22 @@
 {
-  "name": "playwright",
+  "name": "playwrighttest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright Test Automation Framework using Typescript, can be used by both developer and software QA",
   "main": "index.js",
   "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adhikarinabin349/PlayWrightTest.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adhikarinabin349/PlayWrightTest/issues"
+  },
+  "homepage": "https://github.com/adhikarinabin349/PlayWrightTest#readme",
   "devDependencies": {
-    "@playwright/test": "^1.32.1"
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.5"
   }
 }
