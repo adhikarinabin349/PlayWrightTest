@@ -1,0 +1,41 @@
+name: Accessibility Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  accessibility-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+
+      - name: Install Playwright and Axe-Playwright
+        run: |
+          npx playwright install
+          npm install --save-dev axe-playwright
+
+      - name: Run Accessibility Tests
+        run: |
+          npx tsx tests/accessibility.test.ts
+
+      - name: Generate HTML Report
+        run: |
+          npx axe-cli -r html ./test-results/axe-report.json > ./test-results/axe-report.html
+
+      - name: Upload Accessibility Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: axe-playwright-report
+          path: ./test-results/

@@ -19,7 +19,11 @@
     "@playwright/test": "^1.50.1",
     "@types/k6": "^0.57.1",
     "@types/node": "^22.13.5",
+    "axe-playwright": "^2.1.0",
     "esbuild": "^0.25.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.1"
   }
 }
