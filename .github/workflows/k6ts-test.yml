@@ -22,10 +22,10 @@ jobs:
           npm install --save-dev typescript @types/k6 esbuild
 
       - name: Transpile TypeScript
-        run: npx esbuild loadTest/k6test.ts --bundle --outfile=loadTest/test.js --external:k6 --external:k6/http --external:k6/metrics
+        run: npx esbuild loadTest/k6test.ts --bundle --outfile=loadTest/k6test-transpiled.js --external:k6 --external:k6/http --external:k6/metrics
 
       - name: Run K6 Test
-        run: k6 run loadTest/k6ts-test.js
+        run: k6 run loadTest/k6test-transpiled.js
       
       - name: Upload K6 Report
         uses: actions/upload-artifact@v4
