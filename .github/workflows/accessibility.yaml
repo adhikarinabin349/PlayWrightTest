@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Accessibility Tests
         run: |
-          npx tsx tests/accessibility.test.ts
+          npx tsx tests/accessibility.spec.ts
 
       - name: Generate HTML Report
         run: |
