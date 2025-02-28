@@ -28,6 +28,5 @@ jobs:
         with:
           name: k6-report
           path: |
-            loadTest/report.html
-            loadTest/report.json
+            playwright-report/
           retention-days: 10
